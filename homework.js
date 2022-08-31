@@ -1,292 +1,256 @@
-// En estas primeras 6 preguntas, reemplaza `null` por la respuesta
-
-// Crea una variable "string", puede contener lo que quieras:
-const nuevaString = 'Hola';
-
-// Crea una variable numérica, puede ser cualquier número:
-const nuevoNum = 4;
-
-// Crea una variable booleana:
-const nuevoBool = true;
-
-// Resuelve el siguiente problema matemático:
-const nuevaResta = 10 - 5 === 5;
-
-// Resuelve el siguiente problema matemático:
-const nuevaMultiplicacion = 10 * 4 === 40 ;
-
-// Resuelve el siguiente problema matemático:
-const nuevoModulo = 21 % 5 === 1;
-
-
-// En los próximos 22 problemas, deberás completar la función.
-// Todo tu código irá dentro de las llaves de la función.
-// Asegúrate que usas "return" cuando la consola te lo pida.
-// Pista: "console.log()" NO fucionará.
 // No cambies los nombres de las funciones.
 
-function devolverString(str) {
-  // "Return" la string provista: str
+function devolverPrimerElemento(array) {
+  // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
-  return str;
+  return array[0];
 }
 
-function suma(x, y) {
-  // "x" e "y" son números
-  // Suma "x" e "y" juntos y devuelve el valor
+
+function devolverUltimoElemento(array) {
+  // Devuelve el último elemento de un array
   // Tu código:
-  return x + y;
+  return array[array.length - 1];
 }
 
-function resta(x, y) {
-  // Resta "y" de "x" y devuelve el valor
+
+function obtenerLargoDelArray(array) {
+  // Devuelve el largo de un array
   // Tu código:
-  return y - x;
+  return array.length;
 }
 
-function multiplica(x, y) {
-  // Multiplica "x" por "y" y devuelve el valor
+
+function incrementarPorUno(array) {
+  // "array" debe ser una matriz de enteros (int/integers)
+  // Aumenta cada entero por 1
+  // y devuelve el array
   // Tu código:
-  return x * y;
+  var nuevoArray = [];
+  for(var i = 0; i < array.length; i++) {
+    nuevoArray[i] = array[i] + 1;
+  }
+
+  return nuevoArray;
 }
 
-function divide(x, y) {
-  // Divide "x" entre "y" y devuelve el valor
+
+function agregarItemAlFinalDelArray(array, elemento) {
+  // Añade el "elemento" al final del array
+  // y devuelve el array
   // Tu código:
-  return x / y;
+  array[array.length] = elemento;
+  return array;
 }
 
-function sonIguales(x, y) {
-  // Devuelve "true" si "x" e "y" son iguales
-  // De lo contrario, devuelve "false"
+
+function agregarItemAlComienzoDelArray(array, elemento) {
+  // Añade el "elemento" al comienzo del array
+  // y devuelve el array
+  // Pista: usa el método `.unshift`
   // Tu código:
-   if(x===y){
+  array.unshift(elemento);
+  return array;
+}
+
+
+function dePalabrasAFrase(palabras) {
+  // "palabras" es un array de strings/cadenas
+  // Devuelve un string donde todas las palabras estén concatenadas
+  // con espacios entre cada palabra
+  // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
+  // Tu código:
+  return palabras.join(' ');
+}
+
+
+function arrayContiene(array, elemento) {
+  // Comprueba si el elemento existe dentro de "array"
+  // Devuelve "true" si está, o "false" si no está
+  // Tu código:
+  for (var i=0; i< array.length; i++ ){
+    if(array[i]=== elemento){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+function agregarNumeros(numeros) {
+  // "numeros" debe ser un arreglo de enteros (int/integers)
+  // Suma todos los enteros y devuelve el valor
+  // Tu código:
+  var suma = 0;
+  for(var i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i];
+  }
+  return suma;
+
+}
+
+
+function promedioResultadosTest(resultadosTest) {
+  // "resultadosTest" debe ser una matriz de enteros (int/integers)
+  // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
+  // Tu código:
+  return agregarNumeros(resultadosTest) / resultadosTest.length;
+}
+
+
+function numeroMasGrande(numeros) {
+  // "numeros" debe ser una matriz de enteros (int/integers)
+  // Devuelve el número más grande
+  // Tu código:
+  var maximo = numeros[0];
+  for(var i = 1; i < numeros.length; i++) {
+    if(numeros[i] > maximo) { 
+      maximo = numeros[i];
+    }
+  }
+  return maximo;
+}
+
+
+function multiplicarArgumentos() {
+  // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
+  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+  // Escribe tu código aquí:
+  if(arguments.length < 1) return 0;
+  var total = 1;
+  for(var i = 0; i < arguments.length; i++) {
+    total = total * arguments[i];
+  }
+  return total;
+}
+
+
+function cuentoElementos(arreglo){
+  //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
+  //Escribe tu código aquí
+  let contador = 0;
+  for (let i = 0; i < arreglo.length ; i++) {
+    if(arreglo[i] > 19){
+      contador++
+    }
+  }
+  return contador
+}
+
+
+function diaDeLaSemana(numeroDeDia) {
+  //Suponga que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente. 
+  //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
+  //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
+  //Escribe tu código aquí   
+  if(numeroDeDia === 1 || numeroDeDia === 7 ){
+    return "Es fin de semana";
+  }
+  return "Es dia Laboral";
+} 
+
+
+function empiezaConNueve(n) {
+  //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
+  //inicia con 9 y false en otro caso.
+  //Escribe tu código aquí
+  let num = n.toString()
+  if(num.charAt(0) === "9"){
     return true;
-   }else{
-    return false;
-}
-}
-
-function tienenMismaLongitud(str1, str2) {
-  // Devuelve "true" si las dos strings tienen la misma longitud
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  return str1.length=== str2.length;
-}
-
-function menosQueNoventa(num) {
-  // Devuelve "true" si el argumento de la función "num" es menor que noventa
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if(num < 90){
-    return true;
-  }else{
-    return false;
   }
+  return false
+}
+
+
+function todosIguales(arreglo) {
+  //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
+  //retornar true, caso contrario retornar false.
+  //Escribe tu código aquí  
+  for (var i =0 ; i < arreglo.length - 1; i++) {
+    if(arreglo[i] !== arreglo[i+1]){
+      return false
+    }
+  }
+  return true
   
-}
+} 
 
-function mayorQueCincuenta(num) {
-  // Devuelve "true" si el argumento de la función "num" es mayor que cincuenta
-  // De lo contrario, devuelve "false"
+
+function mesesDelAño(array) {
+  //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
+  // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
+  //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  return num > 50;
-}
-
-function obtenerResto(x, y) {
-  // Obten el resto de la división de "x" entre "y"
-  // Tu código:
-  return x % y;
-}
-
-function esPar(num) {
-  // Devuelve "true" si "num" es par
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if(num % 2 ===0){
-    return true; 
-  }else{
-
-    return false;
-
+  var nuevoArray=[];
+  for (var i=0; i < array.length; i ++){
+    if(array[i]==="Enero" || array[i]==="Marzo" || array[i]==="Noviembre"){
+      nuevoArray.push(array[i]);
+    }
   }
-  
-  
+    if(nuevoArray.length < 3){
+      return "No se encontraron los meses pedidos";
+    }
+  return nuevoArray; 
 }
 
-function esImpar(num) {
-  // Devuelve "true" si "num" es impar
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if(num % 2 ===0){
-    return true; 
-  }else{
 
-    return false;
+function mayorACien(array) {
+  //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
+  //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
+  // Tu código:
+  var nuevoArray = [];
+  for(i=0; i < array.length; i ++){
+    if(array[i] > 100 ){
+      nuevoArray.push(array[i]);
+    }
   }
-  
+  return nuevoArray;
 }
 
-function elevarAlCuadrado(num) {
-  // Devuelve el valor de "num" elevado al cuadrado
-  // ojo: No es raiz cuadrada!
+
+function breakStatement(numero) {
+  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Guardar cada nuevo valor en un array. 
+  //Devolver el array
+  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y 
+  //devolver: "Se interrumpió la ejecución"
+  //Pista: usá el statement 'break'
   // Tu código:
-  return Math.pow(num,2);
 }
 
-function elevarAlCubo(num) {
-  // Devuelve el valor de "num" elevado al cubo
+
+function continueStatement(numero) {
+  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Guardar cada nuevo valor en un array.    
+  //Devolver el array
+  //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
+  //Pista: usá el statement 'continue'
   // Tu código:
-  return Math.pow(num,3);
 }
-
-function elevar(num, exponent) {
-  // Devuelve el valor de "num" elevado al exponente dado en "exponent"
-  // Tu código:
-  return Math.pow(num, exponent);
-}
-
-function redondearNumero(num) {
-  // Redondea "num" al entero más próximo y devuélvelo
-  // Tu código:
-  return Math.round(num);
-}
-
-function redondearHaciaArriba(num) {
-  // Redondea "num" hacia arriba (al próximo entero) y devuélvelo
-  // Tu código:
-  return Math.ceil(num);
-}
-
-function numeroRandom() {
-  //Generar un número al azar entre 0 y 1 y devolverlo
-  //Pista: investigá qué hace el método Math.random()
-Math.random();  
-}
-
-function esPositivo(numero) {
-  //La función va a recibir un entero. Devuelve como resultado una cadena de texto que indica si el número es positivo o negativo. 
-  //Si el número es positivo, devolver ---> "Es positivo"
-  //Si el número es negativo, devolver ---> "Es negativo"
-  //Si el número es 0, devuelve false
-  if(numero === 0){
-    return false;
-  } else if(numero > 0){
-    return "Es positivo";
-  } else {
-    return "Es negativo";
-  }
- 
-
-  }
-  
-
-
-function agregarSimboloExclamacion(str) {
-  // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
-  // Ejemplo: "hello world" pasaría a ser "hello world!"
-  // Tu código:
-  return str + '!';
-}
-
-function combinarNombres(nombre, apellido) {
-  // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
-  // Ejemplo: "Soy", "Henry" -> "Soy Henry"
-  // Tu código:
-  var str = nombre + ' ' + apellido;
-  return str;
-}
-
-function obtenerSaludo(nombre) {
-  // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
-  // "Martin" -> "Hola Martin!"
-  // Tu código:
-  return 'Hola' +  nombre + '!';
-}
-
-function obtenerAreaRectangulo(alto, ancho) {
-  // Retornar el area de un rectángulo teniendo su altura y ancho
-  // Tu código:
-  return alto * ancho;
-  
-}
-
-
-function retornarPerimetro(lado){
-  //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
-  //Escribe tu código aquí
-  return lado * 4;
-}
-
-
-function areaDelTriangulo(base, altura){
-  //Desarrolle una función que calcule el área de un triángulo.
-  //Escribe tu código aquí
-  return (base * altura)/2;
-}
-
-
-function deEuroAdolar(euro){
-  //Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que reciba
-  //como parámetro un número de euros y calcule el cambio en dólares.
-  //Escribe tu código aquí
-  return euro * 1.2;
-}
-
-
-function esVocal(letra){
-  //Escribe una función que reciba una letra y, si es una vocal, muestre el mensaje “Es vocal”. 
-  //Verificar si el usuario ingresó un string de más de un carácter, en ese caso, informarle 
-  //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
-  // Si no es vocal, tambien debe devolver "Dato incorrecto".
-  //Escribe tu código aquí
-  if(letra.length > 1){
-    return "Dato incorrecto";
-  }
-  if(letra==="a" || letra==="e" || letra==="i" || letra=== "o" || letra==="u"){
-
-    return "Es vocal";
-  }
-  return "Dato incorrecto";
-}
-
 
 
 // No modificar nada debajo de esta línea
 // --------------------------------
 
 module.exports = {
-  nuevaString,
-  nuevoNum,
-  nuevoBool,
-  nuevaResta,
-  nuevaMultiplicacion,
-  nuevoModulo,
-  devolverString,
-  tienenMismaLongitud,
-  sonIguales,
-  menosQueNoventa,
-  mayorQueCincuenta,
-  suma,
-  resta,
-  divide,
-  multiplica,
-  obtenerResto,
-  esPar,
-  esImpar,
-  elevarAlCuadrado,
-  elevarAlCubo,
-  elevar,
-  redondearNumero,
-  redondearHaciaArriba,
-  numeroRandom,
-  esPositivo,
-  agregarSimboloExclamacion,
-  combinarNombres,
-  obtenerSaludo,
-  obtenerAreaRectangulo,
-  retornarPerimetro,
-  areaDelTriangulo,
-  deEuroAdolar,
-  esVocal,
+  devolverPrimerElemento,
+  devolverUltimoElemento,
+  obtenerLargoDelArray,
+  incrementarPorUno,
+  agregarItemAlFinalDelArray,
+  agregarItemAlComienzoDelArray,
+  dePalabrasAFrase,
+  arrayContiene,
+  agregarNumeros,
+  promedioResultadosTest,
+  numeroMasGrande,
+  multiplicarArgumentos,
+  cuentoElementos,
+  diaDeLaSemana,
+  empiezaConNueve,
+  todosIguales,
+  mesesDelAño,
+  mayorACien,
+  breakStatement,
+  continueStatement
 };
